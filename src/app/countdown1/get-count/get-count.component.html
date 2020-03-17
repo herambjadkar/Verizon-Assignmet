@@ -1,0 +1,21 @@
+<div class="counter-form">
+  <div class="row">
+    <div class="col-sm-3">Enter Timer Limit</div>
+    <div class="col"><input type="number" (input)="updateCount($event)" [value]="valueInput.userinput"
+        [disabled]="valueInput.intervalrunning" /></div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col offset-sm-3">
+      <button class="btn btn-primary mr-2" (click)="Play()">Play/
+        Pause</button>
+      <button class="btn btn-primary" (click)="reset()">Reset</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let num of pausedValues">Paused at {{num}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-5 mb-2">
+    <app-show-count [count]="count"></app-show-count>
+  </div>
+  <div class="col-md-7 mb-2">
+    <app-get-count [valueInput]="{userinput:userInput,intervalrunning:intervalRunning}"
+      (userCount)="updateCount($event)" (onReset)="reset()" (onPlay)="onPlayClicked($event)"
+      [pausedValues]="paused.value"></app-get-count>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <app-logs [logs]="logs"></app-logs>
+  </div>
+  <div class="col-md-7">
+    <app-count [played]="played" [paused]="paused.count"></app-count>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="counter-form">
+  <div class="row">
+    <div class="col-sm-3">Enter Timer Limit</div>
+    <div class="col"><input type="number" (input)="countdownService.updateCount($event)" [value]="countdownService.userInput"
+      [disabled]="countdownService.intervalRunning" /></div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col offset-sm-3">
+      <button class="btn btn-primary mr-2" (click)="countdownService.intervalRunning ? countdownService.pauseInterval() : countdownService.startCounter()" >Play/ Pause</button>
+      <button class="btn btn-primary" (click)="countdownService.reset()" >Reset</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let num of countdownService.paused.value">Paused at {{num}}</div>
+    </div>
+  </div>
+</div>

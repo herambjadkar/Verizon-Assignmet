@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-5 mb-2">
+    <div class="counter-show border-0">
+      <div *ngFor="let log of countdownService.logs" class="text-center">{{log}}</div>
+    </div>
+  </div>
+  <div class="col-md-7 mb-2">
+    <div class="counter-show border-0">
+      <div class="row">
+        <div class="col text-center">
+          <h2>{{countdownService.played}}</h2>
+          <h4>Started</h4>
+        </div>
+        <div class="col text-center">
+          <h2>{{countdownService.paused.count}}</h2>
+          <h4>Paused</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
